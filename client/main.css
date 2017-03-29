@@ -1,63 +1,57 @@
 /* CSS declarations go here */
 header {
-    min-height: auto;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-    background-position: center;
-    background-image: url(https://lh3.googleusercontent.com/Y2Nv-7HNwyjTd7jh8R7KaAiaidZL-ejFNYJadHpI84VSrieEBG_sGDd8j3Dd-sECgQ9YdknCy7iYKFo=w1301-h629-rw);
-    color: #fff;
-  }
-  h1 {
-    font-family:Sans-Serif;
-    color: #FFFFF5;
-
-  }
-
-  h3 {
-    font-family:Serif;
-    color: #FFFFF5;
-
-  }
-  .fondo{
-
-    width: 100% !important;
-    height: 100% !important;
-    background: url(http://images.performgroup.com/di/library/goal_es/be/28/messi-ucl-all-games_1v622wlfla0651jhy9px1b2me1.jpg);
-
+  min-height: auto;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  background-position: center;
+  background-image: url(https://lh3.googleusercontent.com/Y2Nv-7HNwyjTd7jh8R7KaAiaidZL-ejFNYJadHpI84VSrieEBG_sGDd8j3Dd-sECgQ9YdknCy7iYKFo=w1301-h629-rw);
+  color: #fff;
 }
-  .centered {
-     text-align: center;
-     font-size: 0;
-  }
-  .centered > div {
-     float: none;
-     display: inline-block;
-     text-align: left;
-     font-size: 13px;
-  }
-
-  p{
-    font-family: serif;
-  }
-  .fixes {
-    border: solid 1px #DDEEEE;
-    border-collapse: collapse;
-    border-spacing: 0;
-    font: normal 13px Arial, sans-serif;
+h1 {
+  font-family: Sans-Serif;
+  color: #FFFFF5;
+}
+h3 {
+  font-family: Serif;
+  color: #FFFFF5;
+}
+.fondo {
+  width: 100% !important;
+  height: 100% !important;
+  background: url(http://images.performgroup.com/di/library/goal_es/be/28/messi-ucl-all-games_1v622wlfla0651jhy9px1b2me1.jpg);
+}
+.centered {
+   text-align: center;
+   font-size: 0;
+}
+.centered > div {
+   float: none;
+   display: inline-block;
+   text-align: left;
+   font-size: 13px;
+}
+p {
+  font-family: serif;
+}
+.fixes {
+  border: solid 1px #DDEEEE;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font: normal 13px Arial, sans-serif;
 }
 .fixes thead th {
-    background-color: #DDEFEF;
-    border: solid 1px #DDEEEE;
-    color: #336B6B;
-    padding: 10px;
-    text-align: left;
-    text-shadow: 1px 1px 1px #fff;
+  background-color: #DDEFEF;
+  border: solid 1px #DDEEEE;
+  color: #336B6B;
+  padding: 10px;
+  text-align: left;
+  text-shadow: 1px 1px 1px #fff;
 }
 .fixes tbody td {
-    border: solid 1px #DDEEEE;
-    color: #f5f5f5;
-    padding: 10px;
-    text-shadow: 1px 1px 1px #fff;
+  border: solid 1px #DDEEEE;
+  color: #f5f5f5;
+  padding: 10px;
+  text-shadow: 1px 1px 1px #fff;
 }
