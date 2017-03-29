@@ -22,4 +22,4 @@ Meteor.methods({
 
     // window.alert('You have been registered');
   }
-  });
+});
