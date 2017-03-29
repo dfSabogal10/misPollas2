@@ -1,8 +1,6 @@
 import {Mongo} from "meteor/mongo";
 import {Meteor} from "meteor/meteor";
 
-
-
 export const Users = new Mongo.Collection("usuarios");
 if (Meteor.isServer) {
 
@@ -16,19 +14,17 @@ if (Meteor.isServer) {
 
 Meteor.methods({
 	'Users.buscarUsuario'(usuario){
-    var user=Users.find({"userID":usuario.userID}).fetch();
-    console.log(user);
-		if (user.length==0) {
-      Users.insert(usuario);
-      user=Users.find({"userID":usuario.userID}).fetch();
-      // window.alert('You have been registered');
-		}
-    else {
-    {
-//      window.alert('login succesful');
-    }
-    }
-    return user;
+	var user=Users.find({"userID":usuario.userID}).fetch();
+	console.log(user);
+	if (user.length==0) {
+		Users.insert(usuario);
+		user=Users.find({"userID":usuario.userID}).fetch();
+		// window.alert('You have been registered');
+	}
+	else {
+	//      window.alert('login succesful');
+	}
+	return user;
 	},
 
 	// 'Projects.añadirAFavoritos'(pid){
