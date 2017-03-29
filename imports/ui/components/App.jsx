@@ -8,9 +8,10 @@ import FacebookLogin from 'react-facebook-login';
 import Project from "./Project.jsx";
 import Fixture from "./Fixtures.jsx"
 import { DateRange } from 'react-date-range';
-		var moment = require('moment');
-		var datestart = new moment('2014-11-11');
-		var dateend = new moment('2014-11-11');
+
+var moment = require('moment');
+var datestart = new moment('2014-11-11');
+var dateend = new moment('2014-11-11');
 
 
 export class App extends Component {
@@ -50,24 +51,22 @@ export class App extends Component {
 		else {
 console.log("Query time");
 	 Meteor.call('getGame',
-			 													   day: day,
-			 													   month:month,
-																	 year:year,
-																	 day2: day2,
-			 													   month2:month2,
-																	 year2:year2,
-
-			 													  (err, res) =>{
-															      if (err) { console.log(err); }
+			   day: day,
+			   month:month,
+			   year:year,
+			   day2: day2,
+			   month2:month2,
+			   year2:year2,
+  (err, res) =>{
+		  if (err) { console.log(err); }
 	else {
 		console.log("made it!");
 		console.log(res.data.fixtures);
 		this.setState({fixtures: res.data.fixtures});
 
 	}
-
-															    });
-															  }
+	    });
+	  }
 	}
   responseFacebook(response){
   var user = Meteor.call('Users.buscarUsuario',response);
@@ -88,7 +87,9 @@ console.log("Query time");
         <div className="header-content">
             <div className="header-content-inner">
                 <h1 id="homeHeading">Bienvenidos a Mis Pollas</h1>
-                <p>¿Estás cansado de tener que utilizar excel? ¿Gestionar los marcadores? ¿Determinar quien ha pagado, quien no? ¿Que tengas que usar cash? ¿Ademas no poder saber quien ha apostado? Vamos a crear una nueva forma de hacer tus pollas de manera social y utilizando las facilidades tecnológicas!</p>
+                <p>¿Estás cansado de tener que utilizar excel? 
+			¿Gestionar los marcadores? ¿Determinar quien ha pagado, quien no? ¿Que tengas que usar cash? 
+			¿Ademas no poder saber quien ha apostado? Vamos a crear una nueva forma de hacer tus pollas de manera social y utilizando las facilidades tecnológicas!</p>
                 <FacebookLogin appId="1298913943519790" autoLoad={true} fields="name,email,picture" callback={this.responseFacebook.bind(this)}/>
             </div>
         </div>
