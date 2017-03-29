@@ -20,6 +20,6 @@ Meteor.methods({
                    "visitante": polla.visitante
                    });
 
-    // window.alert('You have been registered');
+ 
   }
   });
