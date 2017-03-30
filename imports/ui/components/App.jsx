@@ -80,6 +80,7 @@ console.log("Query time");
 
 
 	render() {
+		/**Este render esta monstruoso, deberian separalo ya sea en más componentes o usar un template **/
     if(this.state.idLogueado== '')
     {
     return (
@@ -156,6 +157,7 @@ App.propTypes = {
 
 
 export default AppContainer = createContainer(()=>{
+
 	Meteor.subscribe('projects');
   Meteor.subscribe('usuarios');
 

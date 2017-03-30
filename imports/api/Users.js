@@ -1,3 +1,5 @@
+
+/** Creo que estos imports no se necesitan,**/
 import {Mongo} from "meteor/mongo";
 import {Meteor} from "meteor/meteor";
 

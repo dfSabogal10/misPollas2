@@ -2,6 +2,9 @@ import {Mongo} from "meteor/mongo";
 
 
 export const Projects = new Mongo.Collection("projects");
+/** Esta validación no deberia realizarse. 
+Si lo necesitan debrian poner el código en el servidor para evitar que el cliente lo llame
+**/
 if (Meteor.isServer) {
 
   // This code only runs on the server
