@@ -7,7 +7,9 @@ export default class Fixtures extends Component {
 
   apostar() {
 
-
+    /** Para qué crear el objeto y no hacer el objeto Json directamente?
+      No vi en ninguún lado que hicieran una verificación de Schema o algo así
+    **/
    var pollas = new Object();
   pollas.name = this.props.name;
   pollas.visitante  = this.refs.visitante.value;
@@ -22,6 +24,7 @@ export default class Fixtures extends Component {
 
 
     render(){
+      /**  El FINISHED deberia ser una constante**/
       if (this.props.fixture.status ==="FINISHED")
       {
         return (
