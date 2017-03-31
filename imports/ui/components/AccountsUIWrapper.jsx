@@ -1,12 +1,12 @@
 
 
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import ReactDOM from 'react-dom';
+import ReactDOM from "react-dom";
 
-import { Template } from 'meteor/templating';
+import { Template } from "meteor/templating";
 
-import { Blaze } from 'meteor/blaze';
+import { Blaze } from "meteor/blaze";
 
 
 

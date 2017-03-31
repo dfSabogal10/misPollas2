@@ -15,8 +15,8 @@ export default class Fixtures extends Component {
   var jsonString= JSON.stringify(pollas);
   console.log(pollas);
 
-    var user = Meteor.call('Pollas.agregarPolla',jsonString);
-    console.log('siretorno:',user);
+    var user = Meteor.call("Pollas.agregarPolla",jsonString);
+    console.log("siretorno:",user);
 
 	}
 

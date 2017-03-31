@@ -7,7 +7,7 @@ export const Users = new Mongo.Collection("usuarios");
 if (Meteor.isServer) {
 
   // This code only runs on the server
-  Meteor.publish('usuarios', function projectsPublication() {
+  Meteor.publish("usuarios", function projectsPublication() {
 
     return Users.find();
 
@@ -15,7 +15,7 @@ if (Meteor.isServer) {
 }
 
 Meteor.methods({
-	'Users.buscarUsuario'(usuario){
+	"Users.buscarUsuario"(usuario){
     var user=Users.find({"userID":usuario.userID}).fetch();
     console.log(user);
 		if (user.length==0) {

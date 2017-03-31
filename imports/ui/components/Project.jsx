@@ -7,10 +7,10 @@ import {Projects} from "../../api/Projects.js"
 export default class Project extends Component {
 
 votarPorProyecto(){
-	Meteor.call('Projects.votarPorProyecto',this.props.project._id);
+	Meteor.call("Projects.votarPorProyecto",this.props.project._id);
 }
 añadirAFavoritos(){
-	Meteor.call('Projects.añadirAFavoritos',this.props.project._id);
+	Meteor.call("Projects.añadirAFavoritos",this.props.project._id);
 }
 	render() {
 		if (!this.props.project) {
@@ -22,7 +22,7 @@ añadirAFavoritos(){
 				<br></br>
 				<div>{this.props.project.Nombres}</div>
 				<div>{this.props.project.Apellidos}</div>
-				<a href={this.props.project['Repositorio de github']}>{this.props.project['Repositorio de github']}</a>
+				<a href={this.props.project["Repositorio de github"]}>{this.props.project["Repositorio de github"]}</a>
 				<div>Votes: {this.props.project.votes}</div>
 				<div>
 					<button type="button" className="btn btn-primary" onClick={this.votarPorProyecto.bind(this)	} >Vote!</button>

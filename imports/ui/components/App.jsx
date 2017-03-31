@@ -3,14 +3,14 @@ import {Meteor} from "meteor/meteor";
 import {createContainer} from "meteor/react-meteor-data";
 import {Projects} from "../../api/Projects.js"
 import {Users} from "../../api/Users.js"
-import AccountsUIWrapper from './AccountsUIWrapper.jsx';
-import FacebookLogin from 'react-facebook-login';
+import AccountsUIWrapper from "./AccountsUIWrapper.jsx";
+import FacebookLogin from "react-facebook-login";
 import Project from "./Project.jsx";
 import Fixture from "./Fixtures.jsx"
-import { DateRange } from 'react-date-range';
-		var moment = require('moment');
-		var datestart = new moment('2014-11-11');
-		var dateend = new moment('2014-11-11');
+import { DateRange } from "react-date-range";
+		var moment = require("moment");
+		var datestart = new moment("2014-11-11");
+		var dateend = new moment("2014-11-11");
 
 
 export class App extends Component {
@@ -18,8 +18,8 @@ export class App extends Component {
   constructor(props){
     super(props);
     this.state ={
-      idLogueado: '',
-			nombre:''
+      idLogueado: "",
+			nombre:""
     };
   }
 
@@ -34,14 +34,14 @@ export class App extends Component {
 
 
 		getGames() {
-		var diasdiferencia =dateend.diff(datestart, 'days');
+		var diasdiferencia =dateend.diff(datestart, "days");
 
-		var month= datestart.format('MM');
-		var day =datestart.format('DD');
-		var year =datestart.format('YYYY');
-		var month2= dateend.format('MM');
-		var day2= dateend.format('DD');
-		var year2 =dateend.format('YYYY');
+		var month= datestart.format("MM");
+		var day =datestart.format("DD");
+		var year =datestart.format("YYYY");
+		var month2= dateend.format("MM");
+		var day2= dateend.format("DD");
+		var year2 =dateend.format("YYYY");
 		console.log(diasdiferencia);
 		if(diasdiferencia> 20)
 		{
@@ -49,7 +49,7 @@ export class App extends Component {
 		}
 		else {
 console.log("Query time");
-	 Meteor.call('getGame',
+	 Meteor.call("getGame",
 			 													   day: day,
 			 													   month:month,
 																	 year:year,
@@ -70,8 +70,8 @@ console.log("Query time");
 															  }
 	}
   responseFacebook(response){
-  var user = Meteor.call('Users.buscarUsuario',response);
-  console.log('siretorno:',user);
+  var user = Meteor.call("Users.buscarUsuario",response);
+  console.log("siretorno:",user);
   console.log(response);
   this.setState({idLogueado: response.userID,
 	nombre:response.name});
@@ -80,7 +80,7 @@ console.log("Query time");
 
 
 	render() {
-    if(this.state.idLogueado== '')
+    if(this.state.idLogueado== "")
     {
     return (
 <section>
@@ -156,8 +156,8 @@ App.propTypes = {
 
 
 export default AppContainer = createContainer(()=>{
-	Meteor.subscribe('projects');
-  Meteor.subscribe('usuarios');
+	Meteor.subscribe("projects");
+  Meteor.subscribe("usuarios");
 
 
 	return {
