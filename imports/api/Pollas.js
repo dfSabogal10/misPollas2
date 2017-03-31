@@ -12,14 +12,31 @@ if (Meteor.isServer) {
   });
 }
 Meteor.methods({
-"Pollas.agregarPolla"(polla){
-  console.log(polla.name);
-
+"Pollas.agregarPolla"(pola){
+  var polla = JSON.parse(pola)
     Pollas.insert({ "userName":polla.name ,
                    "local": polla.local,
-                   "visitante": polla.visitante
+                   "visitante": polla.visitante,
+                   "equipolocal":polla.equipol,
+                   "equipovisitante":polla.equipov
                    });
+                   return "Agregado";
+
 
     // window.alert('You have been registered');
-  }
+  },
+  "Pollas.vermispollas"(usuario){
+    this.unblock();
+
+    var polla=Pollas.find({"userName":usuario}).fetch();
+    console.log(polla)
+    if (polla.length==0) {
+      return "NO";
+    }
+    else {
+      return polla;
+    }
+
+
+    }
   });

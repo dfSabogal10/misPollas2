@@ -1,14 +1,18 @@
 import React, {Component, PropTypes} from "react";
 import {Meteor} from "meteor/meteor";
 import {Pollas} from "../../api/Pollas.js";
-
+import {createContainer} from "meteor/react-meteor-data";
 
 export default class Fixtures extends Component {
 
   apostar() {
 
 
+
+
    var pollas = new Object();
+   pollas.equipol=this.props.fixture.homeTeamName;
+   pollas.equipov=this.props.fixture.awayTeamName;
   pollas.name = this.props.name;
   pollas.visitante  = this.refs.visitante.value;
   pollas.local = this.refs.local.value;
@@ -17,6 +21,7 @@ export default class Fixtures extends Component {
 
     var user = Meteor.call("Pollas.agregarPolla",jsonString);
     console.log("siretorno:",user);
+    console.log("Resultado:",jsonString);
 
 	}
 

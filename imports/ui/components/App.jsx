@@ -5,6 +5,8 @@ import {Users} from "../../api/Users.js"
 import AccountsUIWrapper from "./AccountsUIWrapper.jsx";
 import FacebookLogin from "react-facebook-login";
 import Fixture from "./Fixtures.jsx"
+import MisPollas from "./MisPollas.jsx"
+
 import { DateRange } from "react-date-range";
 		var moment = require("moment");
 		var datestart = new moment("2014-11-11");
@@ -16,17 +18,15 @@ export class App extends Component {
   constructor(props){
     super(props);
     this.state ={
-      idLogueado: "",
-			nombre:""
-    };
+      idLogueado: "javier",
+			nombre:"javier"    };
   }
 
   onChange(state) {
 			    this.setState(state);
 			  }
 				handleSelect(date){
-
-										 datestart = new moment(date.startDate);
+				datestart = new moment(date.startDate);
 				dateend = new moment(date.endDate);
 		}
 
@@ -75,6 +75,22 @@ console.log("Query time");
 	nombre:response.name});
   console.log(this.state.idLogueado);
   }
+	mispollitas(){
+		var aEnviar =this.state.nombre
+	var response = Meteor.call("Pollas.vermispollas",aEnviar,(err, res) =>{
+		if (err) { console.log(err); }
+else {
+	console.log("RESPUESTA:",res);
+	this.setState({ mispollas: (res) });
+	console.log("HOLA:",this.state.mispollas);
+
+}
+
+	});
+
+}
+
+
 
 
 	render() {
@@ -118,11 +134,16 @@ console.log("Query time");
 					</div>
 					<div className="container-fluid">
 					  <div className="row centered">
-					    <div className="col-xs-6 col-md-3">
+					    <div className="col-xs-3 col-md-3">
 					    </div>
-								<div className="col-xs-6 col-md-6 ">
+								<div className="col-xs-3 col-md-3 ">
 									<button onClick={this.getGames.bind(this)}  className="btn">Ver Partidos</button>
 								</div>
+								<div className="col-xs-3 col-md-3 ">
+								<button onClick={this.mispollitas.bind(this)} className="btn">Ver Mis Pollas</button>
+							</div>
+
+
 					    <div className="col-xs-3 col-md-3">
 					    </div>
 					  </div>
@@ -137,6 +158,11 @@ console.log("Query time");
 					      </div>
 
 
+								<div> {this.state&&this.state.mispollas&&this.state.mispollas.map(mipolla => {
+									return <MisPollas mipolla={mipolla} key={mipolla._id} />
+																		 })}
+											</div>
+
 
 				</div>
 			</div>
@@ -149,18 +175,14 @@ console.log("Query time");
 
 
 App.propTypes = {
-	projects : PropTypes.array.isRequired
 }
 
 
 export default AppContainer = createContainer(()=>{
-	Meteor.subscribe("projects");
   Meteor.subscribe("usuarios");
 
 
 	return {
-		projects: Projects.find({}).fetch(),
-		top: Projects.find({}, {sort: {votes: -1}, limit:10}).fetch(),
-		favourites: Projects.find({ FavouriteUsers: Meteor.userId() }),
+
 	};
 }, App);
