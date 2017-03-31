@@ -1,6 +1,5 @@
 import { Meteor } from "meteor/meteor";
 
-import {Projects} from "../imports/api/Projects"
 
 import {Users} from "../imports/api/Users"
 import {Pollas} from "../imports/api/Pollas"

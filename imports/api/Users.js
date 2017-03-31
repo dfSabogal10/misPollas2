@@ -9,6 +9,7 @@ if (Meteor.isServer) {
   // This code only runs on the server
   Meteor.publish("usuarios", function projectsPublication() {
 
+
     return Users.find();
 
   });

@@ -1,11 +1,9 @@
 import React, {Component, PropTypes} from "react";
 import {Meteor} from "meteor/meteor";
 import {createContainer} from "meteor/react-meteor-data";
-import {Projects} from "../../api/Projects.js"
 import {Users} from "../../api/Users.js"
 import AccountsUIWrapper from "./AccountsUIWrapper.jsx";
 import FacebookLogin from "react-facebook-login";
-import Project from "./Project.jsx";
 import Fixture from "./Fixtures.jsx"
 import { DateRange } from "react-date-range";
 		var moment = require("moment");
